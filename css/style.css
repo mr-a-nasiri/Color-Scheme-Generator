@@ -13,6 +13,19 @@ body {
   background-color: #fff;
   color: #222;
   font-family: 'Inter', sans-serif;
+  background: #9cecfb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0052d4,
+    #65c7f7,
+    #9cecfb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0052d4,
+    #65c7f7,
+    #9cecfb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .container {
@@ -25,7 +38,7 @@ body {
   grid-template-columns: 0.6fr 3fr 2.5fr;
   column-gap: 1.6rem;
   padding: 0 2rem;
-  margin-bottom: 4.8rem;
+  margin-bottom: 3.2rem;
   height: 50px;
 }
 
@@ -37,6 +50,7 @@ body {
   /* overflow: hidden; */
   box-shadow: 0 0 3px #222;
   align-self: center;
+  cursor: pointer;
 }
 
 .tools select {
@@ -45,25 +59,36 @@ body {
   position: relative;
   text-indent: 5px;
   border-radius: 5px;
-}
-
-.tools select option:not(:checked) {
-  font-weight: 400;
+  cursor: pointer;
 }
 
 .tools button {
-  background-color: chocolate;
+  background: #ee0979; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff6a00, #ee0979); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff6a00,
+    #ee0979
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   border: 0;
   border-radius: 5px;
   padding: 0.8rem 0rem;
   box-shadow: 0 0 3px #000;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.tools button:active {
+  transform: scale(0.98);
+  cursor: pointer;
 }
 
 .colors-panel {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   height: 400px;
   box-shadow: 0 -2px 5px 3px rgba(0, 0, 0, 0.2);
 }
@@ -71,7 +96,20 @@ body {
 .color-col {
   display: grid;
   grid-template-rows: 0.9fr 0.1fr;
-  box-shadow: 2px 0 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0 5px 0px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+@media (width < 600px) {
+  .colors-panel {
+    grid-template-columns: repeat(3, 1fr);
+    height: 600px;
+    row-gap: 2.4rem;
+  }
+
+  .color-col {
+    grid-template-rows: 0.8fr 0.2fr;
+  }
 }
 
 .color-col span {
@@ -81,24 +119,24 @@ body {
   font-weight: 500;
 }
 
-.color {
+.copy {
+  position: fixed;
+  inset: 0;
+  bottom: 0;
+  margin: auto;
+  height: 5rem;
+  width: 16rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0 5px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 0 5px rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.color-1 {
-  background-color: aqua;
-}
-.color-2 {
-  background-color: red;
-}
-.color-3 {
-  background-color: yellow;
-}
-.color-4 {
-  background-color: black;
-}
-.color-5 {
-  background-color: green;
-}
-
-.color-code {
+.code {
+  cursor: pointer;
 }
