@@ -2,9 +2,103 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* outline: 1px solid red;  /* for debugging */
+  /* outline: 1px solid red; */
 }
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  margin: 2.4rem auto;
+  max-width: 600px;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: 0.6fr 3fr 2.5fr;
+  column-gap: 1.6rem;
+  padding: 0 2rem;
+  margin-bottom: 4.8rem;
+  height: 50px;
+}
+
+.tools input {
+  height: 3.2rem;
+  width: 3.2rem;
+  border: 0;
+  /* border-radius: 5px; */
+  /* overflow: hidden; */
+  box-shadow: 0 0 3px #222;
+  align-self: center;
+}
+
+.tools select {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  position: relative;
+  text-indent: 5px;
+  border-radius: 5px;
+}
+
+.tools select option:not(:checked) {
+  font-weight: 400;
+}
+
+.tools button {
+  background-color: chocolate;
+  color: #fff;
+  font-size: 1.4rem;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.8rem 0rem;
+  box-shadow: 0 0 3px #000;
+}
+
+.colors-panel {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 400px;
+  box-shadow: 0 -2px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.color-col {
+  display: grid;
+  grid-template-rows: 0.9fr 0.1fr;
+  box-shadow: 2px 0 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.color-col span {
+  justify-self: center;
+  align-self: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.color {
+}
+
+.color-1 {
+  background-color: aqua;
+}
+.color-2 {
+  background-color: red;
+}
+.color-3 {
+  background-color: yellow;
+}
+.color-4 {
+  background-color: black;
+}
+.color-5 {
+  background-color: green;
+}
+
+.color-code {
 }
